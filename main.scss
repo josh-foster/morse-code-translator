@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .wrap{
+        display: flex;
+        align-items: center;
+        width: 60vw;
+        justify-content: space-around;
+
+        img{
+            height: 500px;
+        }
+    }
+
+   
+}
