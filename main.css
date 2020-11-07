@@ -30,7 +30,8 @@ body .wrap {
       justify-content: space-around;
 }
 
-body .wrap img {
-  height: 500px;
+body .wrap .translator p {
+  background-color: green;
+  font-size: 100px;
 }
 /*# sourceMappingURL=main.css.map */

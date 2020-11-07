@@ -1,3 +1,14 @@
+
+const morseCodeOutput = document.getElementById("morse-code").innerHTML ;
+  
+const getEnglishInput = () => {
+    const englishInput = document.getElementById("english-input").value;
+    return englishInput;
+}
+
+
+
+
 const letterConverter = (letter) => {
     if (letter === "a") {
         return ".-"
@@ -5,99 +16,142 @@ const letterConverter = (letter) => {
         return "-..."
     }
     else if (letter === "c") {
-        return "-..."
+        return "-.-."
     }
     else if (letter === "d") {
-        return "-..."
+        return "-.."
     }
     else if (letter === "e") {
-        return "-..."
+        return "."
     }
     else if (letter === "f") {
-        return "-..."
+        return "..-."
     }
     else if (letter === "g") {
-        return "-..."
+        return "--."
     }
     else if (letter === "h") {
-        return "jfah"
+        return "...."
     }
     else if (letter === "i") {
-        return "-..."
+        return ".."
     }
     else if (letter === "j") {
-        return "-..."
+        return ".---"
     }
     else if (letter === "k") {
-        return "-..."
+        return "-.-"
     }
     else if (letter === "l") {
-        return "-..."
+        return ".-.."
     }
     else if (letter === "m") {
-        return "-..."
+        return "--"
     }
     else if (letter === "n") {
-        return "-..."
+        return "-."
     }
     else if (letter === "o") {
-        return "-..."
+        return "---"
     }
     else if (letter === "p") {
-        return "-..."
+        return ".--."
     }
     else if (letter === "q") {
-        return "-..."
+        return "--.-"
     }
     else if (letter === "r") {
-        return "-..."
+        return ".-."
     }
     else if (letter === "s") {
-        return "-..."
+        return "..."
     }
     else if (letter === "t") {
-        return "-..."
+        return "-"
     }
     else if (letter === "u") {
-        return "-..."
+        return "..-"
     }
     else if (letter === "v") {
-        return "-..."
+        return "...-"
     }
     else if (letter === "w") {
-        return "-..."
+        return ".--"
     }
     else if (letter === "x") {
-        return "-..."
+        return "-..-"
     }
     else if (letter === "y") {
-        return "-..."
+        return "-.--"
     }
     else if (letter === "z") {
-        return "-..."
+        return "--.."
     }
     else if (letter === " ") {
         return "/"
     }
 }
 
-const textInputGlobal = document.getElementById("submit").addEventListener("click", (event) => {
+
+
+
+// const testString = "iigdhds oisdh"
+
+// const testStringArray = testString.split("");
+
+// const testStringArrayConverted = testStringArray.map((el) => {
+//     return letterConverter(el);
+// });
+
+// const testStringArrayConvertedString = testStringArrayConverted.join("");
+
+const translator = (string) => {
+    const stringArray = string.split("");
+    const stringArrayConverted = stringArray.map((el) => {
+        return letterConverter(el);
+    })
+    const stringArrayconvertedString = stringArrayConverted.join("");
+    return stringArrayconvertedString;
+}
+
+
+
+
+
+
+const showMorseCode = (translatedString) => {
+    const morseCode = translatedString
+    document.getElementById("morse-code").innerHTML = `${morseCode}`
+    translatedString = ""
+}
+
+
+
+
+
+// const textInputGlobal = document.getElementById("submit").addEventListener("click", (event) => {
+//     event.preventDefault();
+//     const textInput = document.getElementById("english-input").value;
+//     for (var i = 0; i < textInput.length; i++) {
+//         let translatedString = "";
+//         const translatedLetter = letterConverter(textInput.charAt(i));
+//         translatedString += translatedLetter; 
+//         console.log(translatedString) ;
+//       }
+// });
+
+
+    
+
+
+
+
+
+document.getElementById("submit").addEventListener("click", (event) => {
     event.preventDefault();
-    const textInput = document.getElementById("english-input").value;
-    for (var i = 0; i < textInput.length; i++) {
-        string2 = "";
-        letterConverter(string.charAt(i));
-        string2 += textInput.charAt(i);   
-        console.log(string2);
-      }
-    
+    const englishInput = getEnglishInput();
+    const morseCode = translator(englishInput);
+    showMorseCode(morseCode); 
 });
-
-    
-
-const string = "hellos";
-
-document.getElementById("morse-code").innerHTML = string
-
 
 

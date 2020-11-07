@@ -19,8 +19,12 @@ body{
         width: 60vw;
         justify-content: space-around;
 
-        img{
-            height: 500px;
+        .translator{
+            p{
+                background-color: green;
+                
+                font-size: 100px;
+            }
         }
     }
 
